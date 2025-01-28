@@ -4,9 +4,20 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:DataClient"
+        xmlns:views="clr-namespace:DataClient.Views" 
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="Data Client - Corona Cases" Height="450" Width="800">
     <Grid>
 
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <TextBlock Grid.Row="0" Margin="10" HorizontalAlignment="Center" FontSize="32" Text="Data Client"/>
+        <TextBlock Grid.Row="1" Margin="10" HorizontalAlignment="Center" FontSize="10" Text="Countries with most amount of corona cases. (Source: https://disease.sh/v3/covid-19/countries?sort=cases)"/>
+
+
+        <views:DataModelChartView Grid.Row="1" Margin="25" DataContext="{Binding DataModelChartViewModel}"/>
     </Grid>
 </Window>
